@@ -7,6 +7,34 @@ function arc_current_branch() {
   fi
 }
 
+# Compare file content between commits A & B.
+# $1 — file path
+# $2 — commit A
+# $3 — commit B
+function adf {
+    diff -u \
+        <(arc show ${2}:${1}) \
+        <(arc show ${3}:${1})
+}
+
+# Compare trees between commits A & B.
+# $1 — path
+# $2 — commit A
+# $3 — commit B
+function adft {
+    diff -u \
+        <(arc ls-tree --full-name -r $2 $1) \
+        <(arc ls-tree --full-name -r $3 $1)
+}
+
+# Compare arc & git work copies.
+# $1 — arc repo path
+# $2 — git repo path
+function agd {
+    diff -u \
+        <(cd $1 && find . -type f -print0 | sort -z | xargs -0 shasum) \
+        <(cd $2 && find . -not -path "./.git/*" -type f -print0 | sort -z | xargs -0 shasum)
+
 #
 # Aliases
 # (sorted alphabetically)
