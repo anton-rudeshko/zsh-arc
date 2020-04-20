@@ -34,6 +34,7 @@ function agd {
     diff -u \
         <(cd $1 && find . -type f -print0 | sort -z | xargs -0 shasum) \
         <(cd $2 && find . -not -path "./.git/*" -type f -print0 | sort -z | xargs -0 shasum)
+}
 
 #
 # Aliases
