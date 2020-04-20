@@ -24,6 +24,15 @@ antigen bundles <<EOBUNDLES
 EOBUNDLES
 ```
 
+Then run:
+
+```bash
+antigen update
+antigen reset
+```
+
+Reopen your shell.
+
 ## Usage
 
 Keep in mind that there are utilities shadowed with aliases:
