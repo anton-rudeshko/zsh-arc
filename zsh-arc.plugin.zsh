@@ -113,6 +113,7 @@ alias apr='arc pr'
 alias aprc='arc pr create'
 alias aprco='arc pr checkout'
 alias aprl='arc pr list'
+alias aprla='arc pr list --all'
 alias aprv='arc pr view'
 
 alias arb='arc rebase'
