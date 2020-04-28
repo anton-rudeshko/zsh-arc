@@ -115,6 +115,7 @@ alias aprco='arc pr checkout'
 alias aprl='arc pr list'
 alias aprla='arc pr list --all'
 alias aprv='arc pr view'
+alias aprs='arc pr status'
 
 alias arb='arc rebase'
 alias arba='arc rebase --abort'
