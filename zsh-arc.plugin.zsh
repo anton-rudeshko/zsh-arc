@@ -134,7 +134,8 @@ alias art='cd "$(arc root || echo .)"'
 alias aru='arc reset --'
 
 alias asb='arc status -sb'
-alias ash='arc show'
+alias ash='arc show --no-decorate'
+alias ashd='arc show'
 alias ass='arc status -s'
 alias ast='arc status'
 
