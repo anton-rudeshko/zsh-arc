@@ -151,3 +151,14 @@ alias atv='arc tag | sort -V'
 
 alias aunwip='arc log -n 1 | grep -q -c "\-\-wip\-\-" && arc reset HEAD~1'
 alias awip='arc add -A; arc rm $(arc ls-files --deleted) 2> /dev/null; arc commit --message "--wip-- [skip ci]"'
+
+if [[ ${__ARC_LANDING+x} ]]; then
+    __ARC_MOUNT="${__ARC_LANDING}/mount"
+    __ARC_STORE="${__ARC_LANDING}/store"
+fi
+
+if [[ ${__ARC_MOUNT+x} && ${__ARC_STORE+x} ]]; then
+    alias amnt='nice arc mount --mount "${__ARC_MOUNT}" --store "${__ARC_STORE}"'
+    alias aumnt='arc unmount "${__ARC_MOUNT}"'
+    alias armnt='aumnt; amnt'
+fi
