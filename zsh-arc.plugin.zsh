@@ -2,8 +2,9 @@
 # Based on https://github.com/ohmyzsh/ohmyzsh/blob/2eb3e9d57cf69f3c2fa557f9047e0a648d80b235/plugins/git/git.plugin.zsh
 
 function arc_current_branch() {
-  if arc root &> /dev/null; then
-    cat $(arc root)/.arc/HEAD | sed 's/Symbolic: "\(.*\)"/\1/'
+  local branch_info=$(arc info 2> /dev/null | grep '^branch:')
+  if [ -n "$branch_info" ]; then
+    echo ${branch_info#branch: }
   fi
 }
 
