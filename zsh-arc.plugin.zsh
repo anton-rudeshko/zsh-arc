@@ -8,6 +8,20 @@ function arc_current_branch() {
   fi
 }
 
+function aprrange() {
+  local pr_number=${1}
+  local pr_head=$(arc pr status --json ${pr_number} | jq -r 'if .merged_revision then "r\(.merged_revision)^2" else .branch end')
+  local pr_base=$(arc merge-base --leftmost trunk ${pr_head})
+
+  echo "${pr_base}..${pr_head}"
+}
+
+# Show PR commits.
+# $1 — PR number
+function apr_log() {
+  arc log $(aprrange ${1})
+}
+
 # Compare file content between commits A & B.
 # $1 — file path
 # $2 — commit A
