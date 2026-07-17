@@ -111,6 +111,7 @@ Run shadowed commands via `command cmd` or `\cmd`.
 | `alg`      | `arc log --stat` |
 | `algg`     | `arc log --graph` |
 | `algm`     | `arc log --graph --max-count=10` |
+| `alm`      | `arc mount --list --json \| jq -r '.[].mount'` |
 | `alo`      | `arc log --oneline` |
 | `alols`    | `arc log --graph --stat` |
 | `alog`     | `arc log --oneline --graph` |
@@ -160,6 +161,7 @@ Run shadowed commands via `command cmd` or `\cmd`.
 
 | Function | Description |
 |:---|:---|
+| `acdm [query]` | `cd` into an arc mount, picking via `fzf` (auto-selects when only one matches; `query` pre-fills the filter). |
 | `agf [branch]` | Force-push a branch (current branch if omitted). |
 | `adf <file> <A> <B>` | Diff a single file's content between commits A and B. |
 | `adft <path> <A> <B>` | Diff trees (`ls-tree`) under a path between commits A and B. |
