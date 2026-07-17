@@ -139,6 +139,15 @@ Run shadowed commands via `command cmd` or `\cmd`.
 | `aunwip`   | `arc log -n 1 \| grep -q -c "\-\-wip\-\-" && arc reset HEAD~1` |
 | `awip`     | `arc add -A; arc rm $(arc ls-files --deleted) 2> /dev/null; arc commit --no-verify --message "--wip-- [skip ci]"` |
 
+### Functions
+
+| Function | Description |
+|:---|:---|
+| `agf [branch]` | Force-push a branch (current branch if omitted). |
+| `adf <file> <A> <B>` | Diff a single file's content between commits A and B. |
+| `adft <path> <A> <B>` | Diff trees (`ls-tree`) under a path between commits A and B. |
+| `agd <arc-repo> <git-repo>` | Compare arc and git work copies by file hashes. |
+
 ## Development
 
 ```
