@@ -50,6 +50,16 @@ programs.zsh.plugins = [
 ];
 ```
 
+## Dependencies
+
+Not required, but some helpers won't work without them:
+
+- [`jq`] — `aprrange`, `alm`
+- [`fzf`] — `acdm`
+
+[`jq`]: https://jqlang.github.io/jq/
+[`fzf`]: https://github.com/junegunn/fzf
+
 ## Usage
 
 Keep in mind that there are utilities shadowed with aliases:
