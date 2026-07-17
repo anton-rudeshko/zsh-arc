@@ -137,7 +137,7 @@ Run shadowed commands via `command cmd` or `\cmd`.
 | `ats`      | `arc tag -s` |
 | `atv`      | `arc tag \| sort -V` |
 | `aunwip`   | `arc log -n 1 \| grep -q -c "\-\-wip\-\-" && arc reset HEAD~1` |
-| `awip`     | `arc add -A; arc rm $(arc ls-files --deleted) 2> /dev/null; arc commit --message "--wip-- [skip ci]"` |
+| `awip`     | `arc add -A; arc rm $(arc ls-files --deleted) 2> /dev/null; arc commit --no-verify --message "--wip-- [skip ci]"` |
 
 ## Development
 
