@@ -33,6 +33,23 @@ antigen reset
 
 Reopen your shell.
 
+### Nix (home-manager)
+
+```nix
+programs.zsh.plugins = [
+  {
+    name = "zsh-arc";
+    file = "zsh-arc.plugin.zsh";
+    src = pkgs.fetchFromGitHub {
+      owner = "anton-rudeshko";
+      repo = "zsh-arc";
+      rev = "<commit>";
+      hash = "<sha256>";
+    };
+  }
+];
+```
+
 ## Usage
 
 Keep in mind that there are utilities shadowed with aliases:
